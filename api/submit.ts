@@ -22,7 +22,10 @@ export default async function thyhandle(req:any,res:any){
             const thystat=new thyresult(thyreq)
             await thystat.save()
             console.log(thystat)
-            res.end("true")
+            if(thystat.gendr!=null){
+                res.end("true")
+            }    
+            res.end("false")   
             
         }
         res.end("false")
