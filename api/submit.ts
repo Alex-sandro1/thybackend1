@@ -1,6 +1,4 @@
 import express from 'express'
-import {thyref} from '../thyref'
-import {countilize} from '../countilise'
 import mongoose, { Schema } from 'mongoose'
 import {thystatus} from '../thyschema'
 import {thyconny} from '../thyconn'
