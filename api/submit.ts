@@ -9,11 +9,11 @@ import {thyref} from '../thyref'
 
 const svr=express()
 svr.use(bodyParser.json())
-const thyresult=mongoose.model("thystatus", thystatus)
 export default async function thyhandle(req:any,res:any){
     try{
         let thycache:typeof mongoose|null=null
         await thyconny(thycache)
+        const thyresult=mongoose.model("thystatus", thystatus)
         const thyreq:any=req.body
         const thycnt=countilize(thyreq,thyref)
         console.log(thycnt)
@@ -27,6 +27,6 @@ export default async function thyhandle(req:any,res:any){
         res.end("false")
     }
     catch(err){
-        res.status(500).res.end("Another error")
+        res.status(500).json({ error: "Another Annnoying  Error" })
     }
 }
