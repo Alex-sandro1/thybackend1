@@ -6,13 +6,14 @@ import bodyParser from 'body-parser'
 import {countilize} from '../countilise'
 import {thyref} from '../thyref'
 
-let thycache:typeof mongoose|null=null
-await thyconny(thycache)
+
 const svr=express()
 svr.use(bodyParser.json())
 const thyresult=mongoose.model("thystatus", thystatus)
 export default async function thyhandle(req:any,res:any){
     try{
+        let thycache:typeof mongoose|null=null
+        await thyconny(thycache)
         const thyreq:any=req.body
         const thycnt=countilize(thyreq,thyref)
         console.log(thycnt)
