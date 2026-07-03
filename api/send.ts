@@ -15,6 +15,7 @@ export default async function thysend(req:any,res:any){
         res.json(thyy)
     } 
     catch(thyerr){
+        console.error(thyerr)
         res.status(500).end("Another Annnoying  Error",thyerr)
     }   
         
