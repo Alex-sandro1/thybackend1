@@ -17,7 +17,7 @@ export default async function thyhandle(req:any,res:any){
         const thycnt=countilize(thyreq,thyref)
         console.log(thycnt)
         if(thyreq!=null){
-            const thystat=new thyresult(thyreq)
+            const thystat=new thyresult(thycnt)
             await thystat.save()
             console.log(thycnt)   
             res.end("false")   
