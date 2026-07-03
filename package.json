@@ -1,9 +1,7 @@
 {
   "name": "backend",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js"
+    "build": "tsc"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -18,5 +16,5 @@
     "tsx": "^4.16.0",
     "typescript": "^5.5.0"
   },
-  "type": "model"
+  "type": "commonjs"
 }

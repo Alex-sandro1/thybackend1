@@ -9,10 +9,10 @@ mongoose.connect("mongodb+srv://alesandro1:JsIEpzWnvdiwNEgJ@cluster0.pjfjxpf.mon
 const thymod=mongoose.model("thystatus", thystatus)
 
 const svr=express()
-svr.use(express.json())
-svr.post("/send",async(req:any,res:any)=>{
+//svr.use(express.json())
+export default async function thysend(req:any,res:any){
     const thysat=await thymod.find({})
     const thyy=countilize(thysat,thyref)
     console.log(thyy)
     res.json(thyy)
-})
+}

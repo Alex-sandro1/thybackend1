@@ -9,8 +9,8 @@ mongoose.connect("mongodb+srv://alesandro1:JsIEpzWnvdiwNEgJ@cluster0.pjfjxpf.mon
 .then(()=>{console.log("N1gga suceeees!")})
 
 const thyresult=mongoose.model("thystatus", thystatus)
-svr.use(express.json())
-svr.post("/submit",(req:any,res)=>{
+//svr.use(express.json())
+export default function thyhandle(req:any,res:any){
     const thyreq:any=req.body
     console.log(thyreq)
     if(thyreq!=null){
@@ -21,4 +21,4 @@ svr.post("/submit",(req:any,res)=>{
         
     }
     res.end("true")
-})
+}
