@@ -10,15 +10,15 @@ mongoose.connect("mongodb://alesandro1:JsIEpzWnvdiwNEgJ@ac-ppjwoqd-shard-00-00.p
 
 const thyresult=mongoose.model("thystatus", thystatus)
 //svr.use(express.json())
-export default function thyhandle(req:any,res:any){
+export default async function thyhandle(req:any,res:any){
     const thyreq:any=req.body
     console.log(thyreq)
     if(thyreq!=null){
         const thystat=new thyresult(thyreq)
-        thystat.save()
+        await thystat.save()
         console.log(thystat)
-        
+        res.end("true")
         
     }
-    res.end("true")
+    res.end("false")
 }
