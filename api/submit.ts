@@ -14,7 +14,7 @@ export default function thyhandle(req:any,res:any){
     const thyreq:any=req.body
     console.log(thyreq)
     if(thyreq!=null){
-        const thystat=new thyresult({thyreq})
+        const thystat=new thyresult(thyreq)
         thystat.save()
         console.log(thystat)
         
