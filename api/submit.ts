@@ -27,6 +27,6 @@ export default async function thyhandle(req:any,res:any){
         res.end("false")
     }
     catch(err){
-        res.status(500).json({ error: "Another Annnoying  Error",err})
+        res.status(500).end("Another Annnoying  Error",err)
     }
 }
