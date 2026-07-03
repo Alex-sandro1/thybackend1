@@ -1,8 +1,5 @@
 {
   "name": "backend",
-  "scripts": {
-    "build": "tsc"
-  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
