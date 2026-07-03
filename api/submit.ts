@@ -3,6 +3,8 @@ import mongoose, { Schema } from 'mongoose'
 import {thystatus} from '../thyschema'
 import {thyconny} from '../thyconn'
 import bodyParser from 'body-parser'
+import {countilize} from '../countilise'
+import {thyref} from '../thyref'
 
 const svr=express()
 svr.use(bodyParser.json())
@@ -15,14 +17,12 @@ const thyresult=mongoose.model("thystatus", thystatus)
 export default async function thyhandle(req:any,res:any){
     try{
         const thyreq:any=req.body
-        console.log(thyreq)
+        const thycnt=countilize(thyreq,thyref)
+        console.log(thycnt)
         if(thyreq!=null){
             const thystat=new thyresult(thyreq)
             await thystat.save()
-            console.log(thystat)
-            if(thystat.gendr.opty){
-                res.end("true")
-            }    
+            console.log(thycnt)   
             res.end("false")   
             
         }
