@@ -1,5 +1,5 @@
 import express from 'express'
-import mongoose, { Schema } from 'mongoose'
+import mongoose from 'mongoose'
 import {thystatus} from '../thyschema'
 import {thyconny} from '../thyconn'
 import bodyParser from 'body-parser'
@@ -11,7 +11,6 @@ await thyconny(thycache)
 const svr=express()
 svr.use(bodyParser.json())
 const thyresult=mongoose.model("thystatus", thystatus)
-//svr.use(express.json())
 export default async function thyhandle(req:any,res:any){
     try{
         const thyreq:any=req.body
