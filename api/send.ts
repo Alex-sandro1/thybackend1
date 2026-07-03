@@ -10,6 +10,6 @@ export default async function thysend(req:any,res:any){
     await thyconny(thycache)
     const thymod=mongoose.model("thystatus", thystatus)
     const thysat=await thymod.find({})
-    const thyy=await countilize(thysat,thyref)
+    const thyy=countilize(thysat,thyref)
     res.json(thyy)
 }
