@@ -15,13 +15,12 @@ export default async function thyhandle(req:any,res:any){
         await thyconny(thycache)
         const thyresult=mongoose.model("thystatus", thystatus)
         const thyreq:any=req.body
-        const thycnt=countilize(thyreq,thyref)
-        console.log(thycnt)
+        //console.log(thycnt)
         if(thyreq!=null){
-            const thystat=new thyresult(thycnt)
+            const thystat=new thyresult(thyreq)
             await thystat.save()
-            console.log(thycnt)   
-            res.end("false")   
+            //console.log(thycnt)   
+            res.end("true")   
             
         }
         res.end("false")

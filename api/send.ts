@@ -6,10 +6,16 @@ import {thystatus} from '../thyschema'
 import {thyconny} from '../thyconn'
 
 export default async function thysend(req:any,res:any){
-    let thycache:typeof mongoose|null=null
-    await thyconny(thycache)
-    const thymod=mongoose.model("thystatus", thystatus)
-    const thysat=await thymod.find({})
-    const thyy=countilize(thysat,thyref)
-    res.json(thyy)
+    try{
+        let thycache:typeof mongoose|null=null
+        await thyconny(thycache)
+        const thymod=mongoose.model("thystatus", thystatus)
+        const thysat=await thymod.find({}).lean()
+        const thyy=countilize(thysat,thyref)
+        res.json(thyy)
+    } 
+    catch(thyerr){
+        res.status(500).end("Another Annnoying  Error",thyerr)
+    }   
+        
 }
